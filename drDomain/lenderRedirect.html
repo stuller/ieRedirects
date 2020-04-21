@@ -8,12 +8,18 @@
     <body>
         <h1>Lender Redirect</h1>
 
-        <button id="redirectToLender">Redirect to lender</button>>
+        <button id="redirectToLender">Redirect to lender</button>
+        
+
 
         <script>
             document.getElementById('redirectToLender').addEventListener('click', function() {
                 window.location = 'https://store.digitalriver.com/store/stuller/Content/pbPage.lenderPage'
             });
+
+            window.addEventListener('load', function(event) {
+                alert(window.document.referrer);
+            })
         </script>
     </body>
 </html>

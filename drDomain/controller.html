@@ -21,12 +21,13 @@
                 console.log('child window put something in storage')
                 console.log(event);
                 
-                console.log(localStorage.getItem('foo'), localStorage.getItem('referrer'), localStorage.getItem('bar'))
+                if(localStorage.getItem(returnedFromLender) === true) {
+                    alert('user returned to child window on our domain, we should get source now')
+                }
             }, true);
             
             var localStorage = window.localStorage;
             localStorage.clear();
-            localStorage.setItem('bar', 'bar')
             function openLenderRedirect() {
                 var child = window.open("lenderRedirect.html", "_blank");
             

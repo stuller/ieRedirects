@@ -6,7 +6,7 @@
         <base href=""/>
     </head>
     <body>
-        <h1>Lender Redirect 13</h1>
+        <h1>Lender Redirect 14</h1>
 
         <button id="redirectToLender">Redirect to lender</button>
         
@@ -20,7 +20,8 @@
             var localStorage = window.localStorage;
 
             window.addEventListener('load', function() {
-                if(window.document.referrer.indexOf('github.digitalriverws.net') !== -1) {
+                alert(window.document.referrer)
+                if(window.document.referrer.indexOf('github.digitalriverws.net') === -1) {
                     localStorage.setItem('returnedFromLender', true);
                     window.close();
                 }

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     </head>
     <body>
-        <h1>Controller 5</h1>
+        <h1>Controller 6</h1>
 
 
         <button onclick="openLenderRedirect()">Open Lender Redirect</button>
@@ -52,7 +52,7 @@
                         // we're here when the child window has been navigated away or closed
                         if (child.closed) {
                             console.log('we have hit the catch block');
-                            console.log(localStorage)
+                            console.log(localStorage.foo, localStorage.referrer)
                             clearInterval(interval);
                             // alert(e);
                             // alert("closed");

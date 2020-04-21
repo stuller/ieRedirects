@@ -6,7 +6,7 @@
         <base href=""/>
     </head>
     <body>
-        <h1>Lender Redirect</h1>
+        <h1>Lender Redirect 2</h1>
 
         <button id="redirectToLender">Redirect to lender</button>
         
@@ -15,6 +15,14 @@
         <script>
             document.getElementById('redirectToLender').addEventListener('click', function() {
                 window.location = 'https://store.digitalriver.com/store/stuller/Content/pbPage.lenderPage'
+            });
+
+            var localStorage = window.localStorage;
+
+            window.addEventListener('load', function() {
+                if(window.document.referrer) {
+                    localStorage.addItem('referrer', window.document.referrer)
+                }
             });
 
             window.addEventListener("message", function(ev) {

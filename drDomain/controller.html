@@ -16,6 +16,10 @@
                     ev.source.close();
                 }
             });
+
+            window.addEventListener("storage", function(event){
+                alert('child window put something in storage')
+            }, true);
             
             function openLenderRedirect() {
                 var child = window.open("lenderRedirect.html", "_blank");

@@ -5,17 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     </head>
     <body>
-        <h1>Controller v1</h1>
+        <h1>Controller 2</h1>
 
 
         <button onclick="openLenderRedirect()">Open Lender Redirect</button>
         <script>
-            // window.addEventListener("message", function(ev) {
-            //     if (ev.data.message === "deliverResult") {
-            //         alert("result: " + ev.data.result);
-            //         ev.source.close();
-            //     }
-            // });
+            window.addEventListener("message", function(ev) {
+                if (ev.data.message === "deliverResult") {
+                    alert("result: " + ev.data.result);
+                    ev.source.close();
+                }
+            });
             
             function openLenderRedirect() {
                 var child = window.open("lenderRedirect.html", "_blank");

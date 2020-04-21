@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     </head>
     <body>
-        <h1>Controller 10</h1>
+        <h1>Controller 12</h1>
 
 
         <button onclick="openLenderRedirect()">Open Lender Redirect</button>
@@ -21,8 +21,9 @@
                 console.log('child window put something in storage')
                 console.log(event);
                 
-                if(localStorage.getItem(returnedFromLender) === true) {
+                if(localStorage.getItem(returnedFromLender)) {
                     alert('user returned to child window on our domain, we should get source now')
+            
                 }
             }, true);
             

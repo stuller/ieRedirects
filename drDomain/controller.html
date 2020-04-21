@@ -26,6 +26,7 @@
                 var leftDomain = false;
                 var interval = setInterval(function() {
                     try {
+                        console.log(child.document.domain);
                         if (child.document.domain === document.domain)
                         {
                             if (leftDomain && child.document.readyState === "complete")

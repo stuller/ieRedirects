@@ -11,10 +11,7 @@
         <button onclick="openLenderRedirect()">Open Lender Redirect</button>
         <script>
             window.addEventListener("message", function(ev) {
-                if (ev.data.message === "openLender") {
-                    alert("result: " + ev.data.result);
-                    ev.source.close();
-                } else if (ev.data.message === "closeLender") {
+                if (ev.data.message === "deliverResult") {
                     alert("result: " + ev.data.result);
                     ev.source.close();
                 }

@@ -6,7 +6,7 @@
         <base href=""/>
     </head>
     <body>
-        <h1>Lender Redirect 9</h1>
+        <h1>Lender Redirect 10</h1>
 
         <button id="redirectToLender">Redirect to lender</button>
         
@@ -20,7 +20,7 @@
             var localStorage = window.localStorage;
 
             window.addEventListener('load', function() {
-                if(window.document.referrer) {
+                if(window.document.referrer.indexOf('github.digitalriverws.net') !== -1) {
                     localStorage.setItem('foo', 'foo');
                     localStorage.setItem('referrer', window.document.referrer)
                 }

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     </head>
     <body>
-        <h1>Controller 9</h1>
+        <h1>Controller 10</h1>
 
 
         <button onclick="openLenderRedirect()">Open Lender Redirect</button>
@@ -25,6 +25,7 @@
             }, true);
             
             var localStorage = window.localStorage;
+            localStorage.clear();
             localStorage.setItem('bar', 'bar')
             function openLenderRedirect() {
                 var child = window.open("lenderRedirect.html", "_blank");

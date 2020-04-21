@@ -47,6 +47,7 @@
                         // we're here when the child window has been navigated away or closed
                         if (child.closed) {
                             clearInterval(interval);
+                            alert(e);
                             alert("closed");
                             return; 
                         }

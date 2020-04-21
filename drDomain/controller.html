@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     </head>
     <body>
-        <h1>Controller 8</h1>
+        <h1>Controller 9</h1>
 
 
         <button onclick="openLenderRedirect()">Open Lender Redirect</button>
@@ -18,7 +18,10 @@
             });
 
             window.addEventListener("storage", function(event){
-                alert('child window put something in storage')
+                console.log('child window put something in storage')
+                console.log(event);
+                
+                console.log(localStorage.getItem('foo'), localStorage.getItem('referrer'), localStorage.getItem('bar'))
             }, true);
             
             var localStorage = window.localStorage;
@@ -53,7 +56,6 @@
                         // we're here when the child window has been navigated away or closed
                         if (child.closed) {
                             console.log('we have hit the catch block');
-                            console.log(localStorage.getItem('foo'), localStorage.getItem('referrer'), localStorage.getItem('bar'))
                             clearInterval(interval);
                             // alert(e);
                             // alert("closed");

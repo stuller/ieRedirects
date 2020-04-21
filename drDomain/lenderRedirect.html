@@ -16,12 +16,12 @@
             document.getElementById('redirectToLender').addEventListener('click', function() {
                 window.location = 'https://store.digitalriver.com/store/stuller/Content/pbPage.lenderPage'
             });
-            window.addEventListener("message", function(ev) {
-                if (ev.data.message === "requestResult") {
-                    // ev.source is the opener
-                    ev.source.postMessage({ message: "deliverResult", result: true }, "*");
-                }   
-            });
+            // window.addEventListener("message", function(ev) {
+            //     if (ev.data.message === "requestResult") {
+            //         // ev.source is the opener
+            //         ev.source.postMessage({ message: "deliverResult", result: true }, "*");
+            //     }   
+            // });
         </script>
     </body>
 </html>

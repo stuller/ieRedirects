@@ -10,12 +10,12 @@
 
         <button onclick="openLenderRedirect()">Open Lender Redirect</button>
         <script>
-            window.addEventListener("message", function(ev) {
-                if (ev.data.message === "deliverResult") {
-                    alert("result: " + ev.data.result);
-                    ev.source.close();
-                }
-            });
+            // window.addEventListener("message", function(ev) {
+            //     if (ev.data.message === "deliverResult") {
+            //         alert("result: " + ev.data.result);
+            //         ev.source.close();
+            //     }
+            // });
             
             function openLenderRedirect() {
                 var child = window.open("lenderRedirect.html", "_blank");
@@ -30,8 +30,8 @@
                             {
                                 // we're here when the child window returned to our domain
                                 clearInterval(interval);
-                                alert("returned: " + child.document.URL);
-                                child.postMessage({ message: "requestResult" }, "*");
+                                console.log("returned: " + child.document.URL);
+                                child.close();
                             }
                         }
                         else {

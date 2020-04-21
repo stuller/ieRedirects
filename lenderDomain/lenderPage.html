@@ -2,8 +2,18 @@
 <html>
     <head>
         <title>Lender Page</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <base href=""/>
     </head>
     <body>
         <h1>Lender Page</h1>
+
+        <button id="return">Return to client page via redirect receiver</p>
+
+        <script>
+            document.getElementById('return').addEventListener('click', function() {
+                window.location = 'https://github.digitalriverws.net/pages/stuller/lenderRedirect.html'
+            });
+        </script>
     </body>
 </html>

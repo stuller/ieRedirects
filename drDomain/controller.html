@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Controller</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    </head>
+    <body>
+        <h1>Controller</h1>
+
+
+        <button onclick="openLenderRedirect()">Open Lender Redirect</button>
+        <script>
+            window.addEventListener("message", function(ev) {
+                if (ev.data.message === "openLender") {
+                    alert("result: " + ev.data.result);
+                    ev.source.close();
+                } else if (ev.data.message === "closeLender") {
+                    alert("result: " + ev.data.result);
+                    ev.source.close();
+                }
+            });
+            
+            function openLenderRedirect() {
+                var child = window.open("lenderRedirect.html", "_blank");
+            
+                var leftDomain = false;
+                var interval = setInterval(function() {
+                    try {
+                        if (child.document.domain === document.domain)
+                        {
+                            if (leftDomain && child.document.readyState === "complete")
+                            {
+                                // we're here when the child window returned to our domain
+                                clearInterval(interval);
+                                alert("returned: " + child.document.URL);
+                                child.postMessage({ message: "requestResult" }, "*");
+                            }
+                        }
+                        else {
+                            // this code should never be reached, 
+                            // as the x-site security check throws
+                            // but just in case
+                            leftDomain = true;
+                        }
+                    }
+                    catch(e) {
+                        // we're here when the child window has been navigated away or closed
+                        if (child.closed) {
+                            clearInterval(interval);
+                            alert("closed");
+                            return; 
+                        }
+                        // navigated to another domain  
+                        leftDomain = true;
+                    }
+                }, 500);
+            }
+            </script>
+    </body>
+</html>
+

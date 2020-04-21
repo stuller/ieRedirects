@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     </head>
     <body>
-        <h1>Controller 4</h1>
+        <h1>Controller 5</h1>
 
 
         <button onclick="openLenderRedirect()">Open Lender Redirect</button>
@@ -21,6 +21,7 @@
                 alert('child window put something in storage')
             }, true);
             
+            var localStorage = window.localStorage;
             function openLenderRedirect() {
                 var child = window.open("lenderRedirect.html", "_blank");
             
@@ -40,7 +41,6 @@
                         }
                         else {
                             console.log('we have hit the else block');
-                            var localStorage = window.localStorage;
                             console.log(localStorage)
                             // this code should never be reached, 
                             // as the x-site security check throws
@@ -51,6 +51,8 @@
                     catch(e) {
                         // we're here when the child window has been navigated away or closed
                         if (child.closed) {
+                            console.log('we have hit the catch block');
+                            console.log(localStorage)
                             clearInterval(interval);
                             // alert(e);
                             // alert("closed");

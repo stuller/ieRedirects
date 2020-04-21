@@ -16,6 +16,14 @@
             document.getElementById('redirectToLender').addEventListener('click', function() {
                 window.location = 'https://store.digitalriver.com/store/stuller/Content/pbPage.lenderPage'
             });
+
+            window.addEventListener('load', function(event) {
+                //if user is returned here from anywhere other than controller, close window
+                if(window.document.referrer.indexOf('github.digitalriverws.net') !== -1) {
+                    window.close();
+                }
+            });
+
             // window.addEventListener("message", function(ev) {
             //     if (ev.data.message === "requestResult") {
             //         // ev.source is the opener

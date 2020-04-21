@@ -18,7 +18,9 @@
             });
 
             window.addEventListener('load', function(event) {
-                alert(window.document.referrer);
+                if(window.document.referrer.indexOf('store.digitalriver.com') !== -1) {
+                    window.close();
+                }
             })
         </script>
     </body>

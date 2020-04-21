@@ -6,7 +6,7 @@
         <base href=""/>
     </head>
     <body>
-        <h1>Lender Redirect 7</h1>
+        <h1>Lender Redirect 8</h1>
 
         <button id="redirectToLender">Redirect to lender</button>
         
@@ -21,8 +21,8 @@
 
             window.addEventListener('load', function() {
                 if(window.document.referrer) {
-                    localStorage.addItem('foo', 'foo');
-                    localStorage.addItem('referrer', window.document.referrer)
+                    localStorage.setItem('foo', 'foo');
+                    localStorage.setItem('referrer', window.document.referrer)
                 }
             });
 
